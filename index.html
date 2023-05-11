@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thirteen Network</title>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <!-- defer use karna usse script last me run hoti or just simply script ko last likh body  me  head me nai jaisa -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- styling internet -->
+  </head>
+  <body>
+
+    <!-- 1st block hai-->
+    <nav>
+      <img class="logo" src="thirteennetwork.jpeg" alt="chat app" />
+    </nav>
+
+    
+
+    <!-- 2nd block hai--> 
+    <div class="toppart">
+    <h1> Chat Room</h1> 
+    </div>
+  
+    <div class="chatcontainer">
+      <!-- <div class="message left">
+       message left and right are created by backend along with css which is provided in csss file
+      </div>
+      <div class="message right">
+         message left and right are created by backend along with css which is provided in csss file
+      </div> -->
+    </div>
+
+    <!-- 3rd block hai -->
+    <div class="send">
+      <form action="#" id="send-container">
+        <input type="text" placeholder="Your Message..." name="messageInp"
+          id="messageInp" />
+        <button class="btn" type="submit"><i class="fa fa-paper-plane"></i></button>
+      </form>
+    </div>
+
+  </body>
+</html>
