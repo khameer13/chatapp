@@ -2,48 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thirteen Network</title>
-    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
-    <script defer src="js/client.js"></script>
-    <!-- defer use karna usse script last me run hoti or just simply script ko last likh body  me  head me nai jaisa -->
+    <meta name="description" content="Thirteen Network: a real-time group chat room built with Node.js and Socket.IO." />
+    <title>Thirteen Network · Chat Room</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- styling internet -->
+    <script defer src="js/client.js"></script>
   </head>
   <body>
+    <div class="app">
+      <header class="chat-header">
+        <img class="logo" src="thirteennetwork.jpeg" alt="Thirteen Network logo" />
+        <div class="title">
+          <h1>Chat Room</h1>
+          <p id="onlineCount" class="sub">Connecting…</p>
+        </div>
+        <span id="modeBadge" class="badge" hidden></span>
+      </header>
 
-    <!-- 1st block hai-->
-    <nav>
-      <img class="logo" src="thirteennetwork.jpeg" alt="chat app" />
-    </nav>
+      <p id="demoNote" class="note" hidden>
+        <strong>Demo mode:</strong> no server is connected, so messages are shared between tabs of this browser.
+        <a href="#" id="openTab">Open a second tab</a> and chat with yourself.
+      </p>
 
-    
+      <main id="messages" class="chatcontainer" aria-live="polite" aria-label="Messages"></main>
 
-    <!-- 2nd block hai--> 
-    <div class="toppart">
-    <h1> Chat Room</h1> 
-    </div>
-  
-    <div class="chatcontainer">
-      <!-- <div class="message left">
-       message left and right are created by backend along with css which is provided in csss file
-      </div>
-      <div class="message right">
-         message left and right are created by backend along with css which is provided in csss file
-      </div> -->
-    </div>
+      <p id="typing" class="typing" aria-live="polite"></p>
 
-    <!-- 3rd block hai -->
-    <div class="send">
-      <form action="#" id="send-container">
-        <input type="text" placeholder="Your Message..." name="messageInp"
-          id="messageInp" />
-        <button class="btn" type="submit"><i class="fa fa-paper-plane"></i></button>
+      <form id="send-container" class="send" autocomplete="off">
+        <input type="text" id="messageInp" name="messageInp" placeholder="Type a message…" maxlength="500" aria-label="Message" disabled />
+        <button class="btn" type="submit" aria-label="Send" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M2 21 23 12 2 3v7l15 2-15 2z"/></svg>
+        </button>
       </form>
     </div>
 
+    <!-- Join screen -->
+    <dialog id="joinDialog" class="join">
+      <form id="joinForm" method="dialog">
+        <img class="logo big" src="thirteennetwork.jpeg" alt="" />
+        <h2>Join the chat</h2>
+        <label for="nameInput">Your name</label>
+        <input id="nameInput" type="text" maxlength="30" placeholder="e.g. Khameer" autocomplete="nickname" required />
+        <p id="joinError" class="error" role="alert"></p>
+        <button class="btn wide" type="submit">Join</button>
+      </form>
+    </dialog>
+
+    <footer class="foot">Made by <a href="https://github.com/khameer13/chatapp">khameer13</a> · Node.js + Socket.IO</footer>
   </body>
 </html>

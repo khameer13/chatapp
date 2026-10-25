@@ -1,15 +1,22 @@
 {
-  "name": "nodeserver",
-  "version": "1.0.0",
-  "description": "khameer ka chatapp",
+  "name": "thirteen-network-chat",
+  "version": "1.1.0",
+  "description": "Real-time group chat room server (Node.js + Socket.IO)",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node --test"
   },
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
-    "prompt-sync": "^4.2.0",
-    "socket.io": "^4.5.4"
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "socket.io-client": "^4.8.1"
   }
 }
